@@ -37,6 +37,7 @@ void setup ()
 void draw ()
 {
   background (0);
+  keyPressed ();
 
   for(int i=0; i < 100; i++)
   {
@@ -46,7 +47,7 @@ void draw ()
   
     circleX[i] = xDirection[i] + circleX[i];
     circleY[i] = circleY[i] + yDirection[i];
-    
+   
     if(circleX[i] > width)
     {
       xDirection [i] = xDirection [i] * -1;
@@ -66,5 +67,21 @@ void draw ()
     {
       yDirection [i] = yDirection [i] * -1;
     }
+  }
+}
+
+void keyPressed ()
+{
+  for(int i=0; i < 100; i++)
+  {
+    if (key == 'a')
+    {
+      xDirection [i] = xDirection [i] -10;
+    }
+    
+    if (key == 's')
+    {
+      yDirection [i] = yDirection [i] +5;
+    }    
   }
 }
